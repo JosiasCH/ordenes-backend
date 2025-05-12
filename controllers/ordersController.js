@@ -3,10 +3,11 @@ const db = require("../config/db");
 // GET todas las órdenes
 exports.getAllOrders = async (req, res) => {
   try {
+    console.log("📦 Intentando obtener órdenes...");
     const [rows] = await db.query("SELECT * FROM orders");
     res.json(rows);
   } catch (err) {
-    console.error("Error fetching orders:", err);
+    console.error("❌ Error fetching orders:", err); // <- asegúrate de tener esto
     res.status(500).json({ error: "Failed to fetch orders" });
   }
 };
