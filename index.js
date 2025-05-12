@@ -14,6 +14,10 @@ app.use("/api/orders", ordersRoutes);
 app.use("/api/order-products", orderProductsRoutes);
 app.use("/api/products", productsRoutes);
 
+app.get('/', (req, res) => {
+  res.send('🚀 Backend funcionando correctamente en Railway');
+});
+
 const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
